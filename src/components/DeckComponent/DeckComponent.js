@@ -8,6 +8,7 @@ import SelectedCardComponent from "../SelectedCardComponent/SelectedCardComponen
 import FilterListAltIcon from '@mui/icons-material/FilterListAlt';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import DeckFilterDrawer from "../DeckFilterDrawer/DeckFilterDrawer";
+import { Dvr } from "@mui/icons-material";
 
 
 class DeckComponent extends Component {
@@ -52,7 +53,10 @@ class DeckComponent extends Component {
     async handleUpdateDeck() {
         const cardIds = [];
         this.state.cardsToUpdate.forEach(dc => {
-            cardIds.push(dc.card.id);
+            cardIds.push({
+                cardId: dc.card.id,
+                quantity: 1
+            });
         });
 
         this.setState({
