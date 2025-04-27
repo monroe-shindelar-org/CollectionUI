@@ -29,7 +29,7 @@ export const updateDeck = (deckId, cardIds) => {
 export const filterDeck = (deckId, filters) => {
     return axios
         .post(
-            `http://localhost:8080/decks/${deckId}/filters`,
+            `${API_BASE_URL}/decks/${deckId}/filters`,
             filters
         )
         .then((response) => {

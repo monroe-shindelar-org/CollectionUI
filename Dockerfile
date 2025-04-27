@@ -1,5 +1,5 @@
 # Base Image
-FROM node
+FROM node:23-alpine
 
 # Set working directory
 WORKDIR /collection-frontend

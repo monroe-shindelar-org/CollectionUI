@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getCards = () => {
     return axios
-        .get(`http://localhost:8080/cards`)
+        .get(`${API_BASE_URL}/cards`)
         .then((response) => {
             return response.data;
         })
@@ -14,7 +14,7 @@ export const getCards = () => {
 export const filterCards = (filters) => {
     return axios
         .post(
-            `http://localhost:8080/cards/filter`,
+            `${API_BASE_URL}/cards/filter`,
             filters
         )
         .then((response) => {
@@ -28,7 +28,7 @@ export const filterCards = (filters) => {
 export const getRacesByType = (type) => {
     return axios
         .post(
-            `http://localhost:8080/cards/ygo/race?type=${type}`,
+            `${API_BASE_URL}/cards/ygo/race?type=${type}`,
         )
         .then((response) => {
             return response.data;
