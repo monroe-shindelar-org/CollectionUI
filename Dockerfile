@@ -1,20 +1,12 @@
-# Base Image
 FROM node:23-alpine
 
-# Set working directory
 WORKDIR /collection-frontend
 
-# Add node modules to $PATH
-ENV PATH /collection-frontend/node_modules/.bin:$PATH
-
-# Install dependencies
-COPY package.json ./
-COPY package-lock.json ./
+COPY package*.json ./
 RUN npm install 
-RUN npm install react-scripts@4.0.3
 
-# Add app
 COPY . ./
 
-# Start app
+EXPOSE 3000
+
 CMD ["npm", "start"]
